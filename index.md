@@ -1,3 +1,5 @@
-
-
-# はじめに
+---
+layout: default
+title:  "Index"
+---
+test 
