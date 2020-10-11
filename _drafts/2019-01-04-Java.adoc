@@ -1,0 +1,16 @@
+= Javaの環境変数
+:page-layout: post
+:page-category:  Java
+:page-tags: [java]
+:page-description:
+:revdate:  2019-01-04  01:16 +0900
+:toc:
+
+== 環境変数
+
+Javaの環境変数は下記の優先順位で有効になります。
+
+1. _JAVA_OPTIONS
+2. コマンドライン
+3. JAVA_TOOL_OPTIONS
+

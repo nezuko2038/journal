@@ -1,0 +1,14 @@
+= Jenkins設定あれこれ
+:page-layout: post
+:page-category: Jenkins
+:page-tags: [ Jenkins ]
+:page-description: Jenkinsの設定あれこれ
+:revdate:  2019-04-26 21:13 +0900
+:toc:
+
+== カスタムワークスペースの変更
+
+Jenkinsのワークスペースは未設定の場合、JENKINS_HOME内のJobフォルダのWorkspace内になっているが、ジョブごとにワークスペースを指定することが可能です。
+
+
+* `高度な設定` ボタンを押下、 `カスタムワークスペースの使用` チェックボックスをON

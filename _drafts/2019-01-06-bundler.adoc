@@ -1,0 +1,16 @@
+= Bundler
+:page-layout: post
+:page-category: Ruby
+:page-tags: [ Bundler ]
+:page-description:
+:revdate:  2019-04-26  21:25 +0900
+:toc:
+
+== gem とは
+
+ruby言語用のライブラリのこと
+
+== Bundlerとは
+
+* gemを管理するライブラリ
+* gem同士の互換性を保ちながらバージョン管理を行うgem

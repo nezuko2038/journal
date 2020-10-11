@@ -1,0 +1,35 @@
+= rubygems
+:page-layout: post
+:page-category: Ruby
+:page-tags: [rubygems ]
+:page-description:
+:revdate:  2019-04-04  22:05 +0900
+:toc:
+
+== Rubygemとは
+
+* Ruby言語用のパッケージ管理システム
+* Ruby1.9以上では標準ライブラリの一部
+
+== install
+
+[source,sh]
+----
+brew install rbenv
+brew install ruby-build
+----
+
+
+[source,sh]
+----
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+source ~/.bash_profile
+----
+
+[literal]
+....
+rbenv install 2.6.1
+rbenv global 2.6.1
+gem install bundler
+....

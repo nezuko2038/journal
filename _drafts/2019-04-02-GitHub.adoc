@@ -1,0 +1,43 @@
+
+= GitHub
+:page-layout: post
+:page-category: GitHub
+:page-tags: [GitHub]
+:page-description:
+:revdate:  2019-04-02  22:01 +0900
+:toc:
+
+== アカウント作成
+https://github.com/
+
+== Asciidoc on GitHub
+
+https://github.com/asciidoctor/jekyll-asciidoc-quickstart
+
+== git clone
+
+=== Permission denied (publickey).
+----
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+----
+
+
+==== 対処方法
+----
+$ eval `ssh-agent`   // ssh-agent を起動
+$ ssh-add ~/.ssh/xxxxxxxx // githubの秘密鍵をssh-agentに登録
+Enter passphrase for ~/.ssh/xxxxxxxx:   ← 鍵を作成したときのパスワードを入力
+$ git clone git@github.com:(xxxxxxx/xxxxxxx.git)
+・・・成功
+----
+
+=== 403
+
+[source,sh]
+----
+git remote set-url origin  https://nezuko2038@github.com/nezuko2038/journal
+----

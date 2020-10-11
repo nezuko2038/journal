@@ -1,0 +1,105 @@
+= jekyllのインストールと利用方法
+:page-layout: post
+:page-category: Jekyll
+:page-tags: [jekyll]
+:page-description:
+:revdate:  2019-01-07  01:54 +0900
+
+:toc:
+
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+== jekyllとは
+
+* ジキル
+* 静的サイトを作るためのRuby製ツール
+* https://jekyllrb.com
+
+== インストール
+
+
+[source,sh]
+----
+/usr/bivn/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install ruby
+gem install  bundler jekyll jekyll-asciidoc
+----
+
+環境変数にGEM_HOMEを設定し、パスを通しておきます、
+[source,sh]
+.~/.bash_profile
+----
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+----
+
+== 初期設定
+
+[literal]
+....
+jekyll new journal
+cd journal
+....
+
+
+== 設定
+[source,gemfile]
+.Gemfile
+----
+group :jekyll_plugins do
+  gem 'jekyll-asciidoc', '~> 2.0.1'
+end
+----
+
+https://takemikami.com/2014/09/16/blogjekyll.html
+
+== 確認用のサーバーを起動
+
+[literal]
+....
+bundle exec jekyll serve
+....
+
+`_drafts` フォルダの記事も含めてローカルサーバで確認する場合は下記のように　`--drafts` オプションをつけて起動します。
+
+[literal]
+....
+bundle exec jekyll serve --drafts
+....
+
+== ディレクトリ構成
+
+jekyllのディレクトリ構成は下記のようになります。
+
+----
+.
+|-- _config.yml
+|-- _drafts/
+|-- _includes/
+|   |-- global_header.html
+|   `-- global_footer.html
+|-- _layouts/
+|   |-- default.html
+|   `-- post.html
+|-- _posts/
+|   |-- 2013-04-04-first-post.md
+|   `-- 2013-04-11-second-post.md
+|-- _site/
+`-- index.html
+----
+
+_config.yml ::
+  サイト設定を記述するファイル
+
+_includes ::
+各ページに共通して登場するHTMLを収めるディレクトリ
+
+_drafts ::
+　下書き用の記事を格納するためのディレクトリ
+
+_layouts ::
+各ページで共通して使う外枠のHTMLを収めるディレクトリ
+
+== plugin
+
+jekyll-asciidoc :: link:2019-04-27-jekyll-asciidoc{outfilesuffix}[]

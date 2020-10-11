@@ -1,0 +1,114 @@
+= Dockerの基本的な操作
+:page-layout: post
+:page-category: Docker
+:page-tags: [Docker]
+:page-description:
+:revdate:  2019-04-19  19:18 +0900
+:toc:
+
+
+== 環境
+
+* Docker version 18.09.2, build 6247962
+
+== イメージ
+=== イメージの取得
+
+
+[literal]
+....
+docker pull centos:centos7
+centos7: Pulling from library/centos
+8ba884070f61: Pull complete
+Digest: sha256:8d487d68857f5bc9595793279b33d082b03713341ddec91054382641d14db861
+Status: Downloaded newer image for centos:centos7
+....
+
+
+=== イメージの確認
+
+取得したDockerイメージは `docker images` コマンドで一覧表示できる。
+
+[literal]
+....
+docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+jenkins/jenkins     lts                 15625611d6fb        13 days ago         704MB
+centos              centos7             9f38484d220f        5 weeks ago         202MB
+....
+
+== コンテナ
+
+=== コンテナ作成
+
+`docker run` コマンドでDockerイメージからコンテナを新規作成します。
+
+[literal]
+....
+docker run -v /Volumes:/my_volume -it -d --name centos6 -p 5901:5901  -p  5922:22 centos:centos6
+docker run -v /Volumes:/my_volume -it -d --name centos7 -p 5901:5901  -p  5922:22 centos:centos7
+....
+
+=== コンテナの確認
+
+....
+docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                              NAMES
+3ec081a22f09        centos:centos7        "/bin/bash"              22 seconds ago      Up 20 seconds       0.0.0.0:5901->5901/tcp, 0.0.0.0:5922->22/tcp       centos7
+cd4053db1606        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   2 days ago          Up 2 days           0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   objective_euclid
+....
+
+
+[literal]
+....
+ docker container ls
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                              NAMES
+cd4053db1606        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   44 hours ago        Up 44 hours         0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   objective_euclid
+....
+
+=== コンテナへアタッチ
+
+[literal]
+....
+docker attach centos7
+....
+
+=== コンテナの停止
+[literal]
+....
+docker stop centos7
+....
+
+
+=== コンテナ履歴を削除する
+
+[literal]
+....
+docker rm $(sudo docker ps -a -q)
+....
+
+== 不要なものを削除する
+
+=== 停止しているコンテナをすべて削除する
+
+[literal]
+....
+docker container prune
+....
+
+=== 未使用のボリュームを全て削除する
+
+
+
+[literal]
+....
+docker volume prune
+....
+
+=== コンテナが使っていないイメージをすべて削除する
+
+[literal]
+....
+docker image prune
+....
+

@@ -1,0 +1,30 @@
+= gitの設定
+:page-layout: post
+:page-category: SCM
+:page-tags: [ git ]
+:page-description: Gitを使う前にやっておきたい設定をご紹介します。
+:revdate:  2019-01-03 00:00:00 +0900
+:toc:
+
+
+
+== リポジトリごとにgitconfigを設定する(Git 2.8以上)
+
+グローバル設定にユーザ名とメールアドレスを設定するのではなく、個々のリポジトリで設定するようにします。
+これで間違ってハンドルネームでプッシュしているリポジトリに本名でコミットしてしまうこともありません。
+[literal]
+....
+git config --global user.useConfigOnly true
+git config --global --unset user.name
+git config --global --unset user.email
+....
+
+あとは個々のリポジトリでユーザー名とメールアドレスを設定しておきます。
+これをやらないとコミットできません。
+
+[literal]
+....
+git config   user.email "nezuko2038@gmail.com"
+git config   user.name "Nezu Mariko"
+....
+

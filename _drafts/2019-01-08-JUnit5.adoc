@@ -1,0 +1,51 @@
+= JUnit5
+:page-layout: post
+:page-category: Java
+:page-tags: [JUnit ]
+:page-description:
+:revdate:  2019-01-08  17:40 +0900
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+:toc:
+
+== JUnit5とは
+
+* Javaのテストフレームワーク
+* Platform/Jupiter/Vintageの３つのサブプロジェクト
+* https://oohira.github.io/junit5-doc-jp/user-guide/
+
+=== Junit4との相違点
+
+* Java8以上が対象
+
+== 利用方法
+
+=== 環境
+
+* MacOS Mojave (version 10.14.4)
+* javac 1.8.0_66
+* Eclipse IDE for Java Developers
+** Version: 2019-03 (4.11.0)
+** Build id: 20190314-1200
+
+=== Mavenプロジェクトの場合
+
+https://mvnrepository.com/ でJUnit5を検索し、pom.xmlに追加します。
+
+
+[source,xml]
+.pom.xml
+----
+<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-launcher</artifactId>
+    <version>1.4.2</version>
+    <scope>test</scope>
+</dependency>
+
+----
+
+== 参考
+
+* http://www.ne.jp/asahi/hishidama/home/tech/java/junit/5/assertion.html
+

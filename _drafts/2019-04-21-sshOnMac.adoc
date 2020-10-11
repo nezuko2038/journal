@@ -1,0 +1,23 @@
+= MacにリモートログインでSSHログインする
+:page-layout: post
+:page-category: Mac
+:page-tags: [ssh, Mac]
+:page-description:
+:revdate:  2019-04-21  19:27 +0900
+:toc:
+
+== Macでリモートログインを有効にする
+
+* デスクトップ左上のりんごマークをクリック
+* `System Preference` -> `Sharing`
+* Remote Login にチェックを入力し、リモートログインを有効にします。
+
+
+== SSHログイン
+
+あとは、ターミナルでログイン可能か確認します。
+
+[literal]
+....
+ssh 192.168.XX.XX
+....
