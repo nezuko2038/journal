@@ -18,11 +18,5 @@ tag_page_dir: tag
 markdown: kramdown
 
 
-defaults:
-    - scope:
-        path: "journal"
-        type: "posts"
-      values:
-        permalink: /:year/:year-:month-:day-:title:output_ext
 
 
