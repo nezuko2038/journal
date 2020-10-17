@@ -4,7 +4,8 @@ email: nezuko2038@gmail.com
 site.lang: ja
 baseurl: "/journal" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#permalink: /:year/:year-:month-:day-:title:output_ext
+
+
 
 twitter_username: nezuko2038
 github_username: nezuko2038
@@ -15,5 +16,13 @@ tag_page_layout: tag_page
 tag_page_dir: tag
 # Build settings
 markdown: kramdown
+
+
+defaults:
+    - scope:
+        path: "journal"
+        type: "posts"
+      values:
+        permalink: /:year/:year-:month-:day-:title:output_ext
 
 
