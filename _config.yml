@@ -2,20 +2,18 @@
 email: nezuko2038@gmail.com
 
 site.lang: ja
+site.author: nezuko2038 
 baseurl: "/journal" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 
-twitter_username: nezuko2038
-github_username: nezuko2038
-
-
-# tag
-tag_page_layout: tag_page
-tag_page_dir: tag
 # Build settings
 markdown: kramdown
+
+
+plugins:
+    - jekyll-titles-from-headings
 
 
 
