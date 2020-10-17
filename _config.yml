@@ -2,7 +2,7 @@
 email: nezuko2038@gmail.com
 
 site.lang: ja
-site.author: nezuko2038 
+
 baseurl: "/journal" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -17,4 +17,9 @@ plugins:
 
 
 
-
+defaults:
+    - scope:
+        path: ""
+        type: "posts"
+    values:
+        permalink: /journal/:categories/:year/:month/:day/:title.html
