@@ -1,12 +1,12 @@
-= jekyll-asciidocs
-:page-layout: post
-:page-category: Jekyll
-:page-tags: [jekyll, asciidoc ]
-:page-description:
-:revdate:  2019-04-27  14:33 +0900
-:toc:
+---
+layout: post
+category: Jekyll 
+tags:  [jekyll, asciidoc ]
+revdate:  2019-04-27  14:33 +0900
+---
 
-== jekyll-asciidocとは
+
+## jekyll-asciidocとは
 
 * 静的サイトジェネレータ jekyll のプラグイン
 * asciidocファイルをhtml変換します。
@@ -14,33 +14,29 @@
 * https://www.rubydoc.info/gems/jekyll-asciidoc/
 
 
-== インストール
+## インストール
 
-[source,Gemfile]
-.Gemfile
-----
+
+```Gemfile
 group :jekyll_plugins do
   gem 'jekyll-asciidoc'
 end
-----
+```
 
 その後 `bundle` コマンドを実行します。
 
-== 設定方法
+## 設定方法
 
-=== ascciidocプラグインの有効化
+### ascciidocプラグインの有効化
 
 [source,yml]
-.config.yml
-----
+```config.yml
 plugins:
 - jekyll-asciidoc
-----
+```
 
-=== その他の設定
-[source,yml]
-.configu.yml
-----
+### その他の設定
+```yml
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
@@ -54,5 +50,5 @@ asciidoctor:
     - icons=font
     - imagesdir=/journal/images
 
-----
+```
 

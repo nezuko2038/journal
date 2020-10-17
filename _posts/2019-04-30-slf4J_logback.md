@@ -1,13 +1,12 @@
-= slf4J + logback
-:page-layout: post
-:page-category:  Java
-:page-tags: [ slf4j, logback ]
-:page-description:
-:revdate:  2019-04-30  21:11 +0900
-ifdef::env-github,env-browser[:outfilesuffix: .adoc]
-:toc:
+---
+layout: post
+category: Java
+tags:  [ slf4j, logback ]
+revdate:  2019-05-01  00:28 +0900
+---
 
-== SLF4Jとは
+
+## SLF4Jとは
 
 * The Simple Logging Facade for Java
 * https://www.slf4j.org/
@@ -16,21 +15,21 @@ Facadeとは、GoFのデザインパターンに出てくるFacadeパターン�
 ユーザにインターフェースを提供しつつ実装の詳細を隠すパターンのことです。
 SLF4Jは、ログの実装(Log4Jであったり、logbackであったり)を隠すためのライブラリになります。
 
-== logbackとは
-* log4j の創始者であるCekiGülcü によって設計されたLog4Jの後継プロジェクト
-* http://logback.qos.ch/
+## logbackとは
+- log4j の創始者であるCekiGülcü によって設計されたLog4Jの後継プロジェクト
+- http://logback.qos.ch/
 
 
-== ビルドパスの設定
-=== Mavenプロジェクトの場合
+## ビルドパスの設定
+###  Mavenプロジェクトの場合
 
 https://mvnrepository.com を参照して、
-link:https://mvnrepository.com/artifact/org.slf4j/slf4j-api[slf4j-api]と link:https://mvnrepository.com/artifact/ch.qos.logback/logback-classic[logback-classic] をビルドパスへ追加します。
+[slf4j-api](https://mvnrepository.com/artifact/org.slf4j/slf4j-api)と 
+[logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic)をビルドパスへ追加します。
 
 2019-04-30時点のバージョンを使用すると下記のようになります。
-[source,xml]
-.pom.xml
-----
+
+```pom.xml 
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -45,17 +44,16 @@ link:https://mvnrepository.com/artifact/org.slf4j/slf4j-api[slf4j-api]と link:h
 		</dependency>
 
 	</dependencies>
-----
+```
 
 
 
 
 
-== code
+### code
 
 
-[source,java]
-----
+```java 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,4 +70,4 @@ public class Slf4jSample {
 	}
 
 }
-----
+```
