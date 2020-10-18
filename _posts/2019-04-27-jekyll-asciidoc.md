@@ -6,6 +6,7 @@ revdate:  2019-04-27  14:33 +0900
 ---
 
 
+
 ## jekyll-asciidocとは
 
 * 静的サイトジェネレータ jekyll のプラグイン
@@ -29,8 +30,7 @@ end
 
 ### ascciidocプラグインの有効化
 
-[source,yml]
-```config.yml
+```ymlconfig.yml
 plugins:
 - jekyll-asciidoc
 ```
